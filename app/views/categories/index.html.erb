@@ -1,0 +1,8 @@
+<h1>categories</h1>
+<div class="categories-list">
+  <% @categories.each do |category| %>
+    <%= render 'category', category: category %>
+  <% end %>
+</div>
+
+<%= link_to 'Add a new category', new_user_category_path(current_user) %>

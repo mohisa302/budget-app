@@ -4,4 +4,8 @@ class User < ApplicationRecord
   # class methods and attributes here
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, :confirmable
+  has_many :budgets
+  has_many :categories
+
+  validates :name, presence: true, length: { maximum: 255 }
 end

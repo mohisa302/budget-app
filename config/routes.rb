@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'splash#index' # set the root route to the splash#index action
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+
+  # Define any other custom routes you need here
 end

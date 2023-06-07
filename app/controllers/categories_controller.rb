@@ -10,7 +10,6 @@ class CategoriesController < ApplicationController
   
   def create
     @user = current_user
-    print "paramets"
     @category = Category.new(category_params.merge(author_id: current_user.id))
   
     if @category.save
@@ -20,10 +19,13 @@ class CategoriesController < ApplicationController
     end
   end
   
-  
-  private
-  
-  def category_params
-    params.require(:category).permit(:name, :icon)
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to user_categories_path(current_user)
+  end
+
+  def total_amount_for_category(category)
+    category.expenses.sum(:amount)
   end
 end

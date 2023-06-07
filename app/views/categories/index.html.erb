@@ -1,8 +1,12 @@
 <h1>categories</h1>
+<% if @categories.any? %>
 <div class="categories-list">
   <% @categories.each do |category| %>
     <%= render 'category', category: category %>
   <% end %>
 </div>
+<% else %>
+  <p>No categories found.</p>
+<% end %>
 
 <%= link_to 'Add a new category', new_user_category_path(current_user) %>

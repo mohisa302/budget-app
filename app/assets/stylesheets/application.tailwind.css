@@ -20,11 +20,22 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #3778c2;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+.background {
+  background-color: #3778c2;
+}
+
+.category-card {
+  width: 100%;
+}
+
+.margin {
+  margin-right: 20rem;
 }

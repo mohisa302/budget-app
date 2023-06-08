@@ -4,7 +4,10 @@
 <% @expenses.each do |expense| %>
   <%= render partial: 'expenses/expense', object: expense, locals: { category: @category } %>
 <% end %>
-  <p>Total amount: <%= @total_amount %> $</p>
+  <div class="bg-white px-2 py-4 flex justify-between">
+    <p class="text-gray-500">Total amount: </p>
+    <p class="text-gray-800"><%= @total_amount %> $</p>
+ </div>
 </div>
 <% else %>
 <p>No expenses found.</p>

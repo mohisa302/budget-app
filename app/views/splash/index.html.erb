@@ -1,7 +1,11 @@
-<div class="flex flex-col items-center bg-blue-400 sm:text-center h-full">
-<h1 class="text-white">Welcome to buget app!</h1>
+<div class="flex flex-col items-center sm:text-center h-screen justify-center">
+  <h1 class="text-white splash-text my-2">Welcome to costino!</h1>
 
-<button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-  Click here to <%= link_to "sign in", new_user_session_path %>!
-</button>
+  <a href="<%= new_user_session_path() %>" class="w-6 bg-transparent hover:bg-blue-500 text-blue-300 font-semibold hover:text-white py-2 px-4 block border rounded">
+    <button class="w-full focus:outline-none">sign in</button>
+  </a>
+
+  <a href="<%= new_user_session_path() %>" class="w-6 my-4 bg-transparent hover:bg-blue-500 text-blue-300 font-semibold hover:text-white py-2 px-4 block border rounded">
+    <button class="w-full focus:outline-none">log in</button>
+  </a>
 </div>

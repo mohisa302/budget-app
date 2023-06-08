@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.splash-text {
+  font-size: xx-large;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #3778c2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

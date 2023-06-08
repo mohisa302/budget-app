@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # class methods and attributes here
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable, :confirmable
+         :recoverable, :rememberable, :validatable, :confirmable
   has_many :budgets
   has_many :categories, foreign_key: 'author_id'
 

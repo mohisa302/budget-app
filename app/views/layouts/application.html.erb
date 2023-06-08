@@ -13,11 +13,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="h-screen w-full">
     <% if notice %>
       <p class="alert"><%= notice %></p>
     <% end %>
-    <main>
+    <main class=" h-screen">
       <%= yield %>
     </main>
   </body>

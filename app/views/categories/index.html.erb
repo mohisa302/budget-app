@@ -11,11 +11,11 @@
 </div>
 <% if @categories.any? %>
 <div class="categories-list flex flex-col justify-center bg-slate-100 items-center w-screen">
+<div class="bg-white category-card overflow-auto py-4 flex justify-between">
+  <p class="text-gray-500">Total amount: </p>
+  <p class="text-gray-800"><%=  @total_amount %> $</p>
+</div>
   <% @categories.each do |category| %>
-    <div class="bg-white category-card overflow-auto py-4 flex justify-between">
-      <p class="text-gray-500">Total amount: </p>
-      <p class="text-gray-800"><%=  controller.total_amount_for_category(category) %> $</p>
-  </div>
     <%= render 'category', category: category %>
   <% end %>
 </div>

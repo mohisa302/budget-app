@@ -1,12 +1,13 @@
 <h1>Expenses for <%= @category.name %></h1>
 <% if @expenses.any? %>
 <div class="expenses-list">
-  <% @expenses.each do |expense| %>
-      <%= render 'expense', expense: expense %>
-  <% end %>
+<% @expenses.each do |expense| %>
+  <%= render partial: 'expenses/expense', object: expense, locals: { category: @category } %>
+<% end %>
   <p>Total amount: <%= @total_amount %> $</p>
 </div>
 <% else %>
 <p>No expenses found.</p>
 <% end %>
 <%= link_to 'Add a new expense', new_category_expense_path(@category) %>
+<%= link_to "Back", user_categories_path(current_user) %>

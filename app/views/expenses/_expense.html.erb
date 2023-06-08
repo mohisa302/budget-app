@@ -4,4 +4,7 @@
         <p>Amount: <%= expense.amount %> $</p>
         <p>Date: <%= expense.created_at.strftime('%B %d, %Y') %></p>
       </div>
+     <% if category.author_id == current_user.id %>
+  <%= button_to 'Delete', category_expense_path(category, expense), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" %>
+<% end %>
 </div>

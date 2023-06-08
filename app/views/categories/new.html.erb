@@ -1,4 +1,5 @@
 <h2>New Category</h2>
+<%= link_to "Back", user_categories_path(current_user) %>
 <%= form_with model: [@user, @category], url: user_categories_path(@user) do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>

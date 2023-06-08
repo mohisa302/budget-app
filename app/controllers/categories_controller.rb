@@ -24,8 +24,14 @@ class CategoriesController < ApplicationController
     @category.destroy
     redirect_to user_categories_path(current_user)
   end
-
+  
   def total_amount_for_category(category)
     category.expenses.sum(:amount)
+  end
+  
+  private
+  
+  def category_params
+    params.require(:category).permit(:name, :icon)
   end
 end

@@ -1,0 +1,14 @@
+<h1>Create a new expense for <%= @category.name %></h1>
+
+<%= form_with(model: [@category, @expense], url: category_expenses_path(@category)) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :amount %>
+  <%= form.number_field :amount %>
+
+  <%= form.label :category_ids %>
+  <%= form.collection_check_boxes :category_ids, current_user.categories, :id, :name %>
+
+  <%= form.submit "Save Expense" %>
+<% end %>

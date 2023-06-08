@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_151814) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_214856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +39,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_151814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_categories_on_author_id"
+  end
+
+  create_table "expense_categories", force: :cascade do |t|
+    t.bigint "expense_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_expense_categories_on_category_id"
+    t.index ["expense_id"], name: "index_expense_categories_on_expense_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -72,5 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_151814) do
   add_foreign_key "budget_categories", "categories"
   add_foreign_key "budgets", "users", column: "author_id"
   add_foreign_key "categories", "users", column: "author_id"
+  add_foreign_key "expense_categories", "categories"
+  add_foreign_key "expense_categories", "expenses"
   add_foreign_key "expenses", "categories"
 end

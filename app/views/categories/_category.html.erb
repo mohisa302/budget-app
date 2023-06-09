@@ -1,5 +1,5 @@
-<%= link_to category_expenses_path(category), class: "category-card" do %>
   <div class="category-details my-4 flex flex-col bg-white overflow-x-auto py-2 category-card items-end">
+<%= link_to category_expenses_path(category), class: "category-card" do %>
     <div class="flex justify-between w-screen px-2">
       <div class="flex card">
         <!-- image -->
@@ -23,10 +23,10 @@
         </div>
       </div>
     </div>
+<% end %>
     <div class="mt-4">
       <% if category.author_id == current_user.id %>
       <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4" %>
       <% end %>
     </div>
   </div>
-<% end %>

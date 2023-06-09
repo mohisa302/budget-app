@@ -1,28 +1,27 @@
 <div class="text-white h-screen">
-<div class="flex px-2 py-8 justify-between background items-center h-10 px-4 w-full">
-  <svg class="h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-  </svg>
-  <h1 class="text-center background text-2xl">CATEGORIES</h1>
-  <svg class="h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-  </svg>
-
+  <div class="flex px-2 py-8 justify-between background items-center h-10 px-4 w-full">
+    <svg class="h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+    <h1 class="text-center background text-2xl">CATEGORIES</h1>
+    <svg class="h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+    </svg>
 </div>
 <% if @categories.any? %>
-<div class="categories-list flex flex-col justify-center bg-slate-100 items-center w-screen">
-<div class="bg-white category-card overflow-auto py-4 flex justify-between">
-  <p class="text-gray-500">Total amount: </p>
-  <p class="text-gray-800"><%=  @total_amount %> $</p>
-</div>
-  <% @categories.each do |category| %>
-    <%= render 'category', category: category %>
-  <% end %>
-</div>
+  <div class="categories-list flex flex-col justify-center bg-slate-100 items-center w-screen">
+  <div class="bg-white category-card overflow-auto py-4 flex justify-between">
+    <p class="text-gray-500">Total amount: </p>
+    <p class="text-gray-800"><%=  @total_amount %> $</p>
+  </div>
+    <% @categories.each do |category| %>
+      <%= render 'category', category: category %>
+    <% end %>
+  </div>
 <% else %>
   <p>No categories found.</p>
 <% end %>
-  <a href="<%=  new_user_category_path(current_user) %>" class="my-4 bg-transparent hover:bg-blue-500 text-blue-900 font-semibold hover:text-white py-2 px-4 block border rounded">
+  <a href="<%=  new_user_category_path(current_user) %>" class="my-4 shadow-md  bg-white hover:bg-blue-500 text-blue-900 font-semibold hover:text-white py-2 px-4 block border rounded">
     <button class="w-full focus:outline-none">Add a new category</button>
   </a>
 </div>

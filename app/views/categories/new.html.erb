@@ -1,11 +1,20 @@
-<h2>New Category</h2>
-<%= link_to "Back", user_categories_path(current_user) %>
+<div class="flex px-2 py-8 text-white background items-center h-10 px-4 w-full">
+    <svg class="h-8 w-8 text-white-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />  <line x1="12" y1="8" x2="12" y2="16" />  <line x1="8" y1="12" x2="16" y2="12" /></svg>
+    <h1 class="ml-4 text-center background text-2xl">New Category</h1>
+</div>
+<div class="flex flex-col">
 <%= form_with model: [@user, @category], url: user_categories_path(@user) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-
-  <%= form.label :icon %>
-  <%= form.text_field :icon %>
-
-  <%= form.submit "Create Category" %>
+<div class="flex my-2 mx-2">
+  <%= form.label :name, class:"block text-gray-700 text-lg font-bold" %>
+  <%= form.text_field :name, class:"form-input border"%>
+</div>
+<div class="flex my-2 mx-2">
+  <%= form.label :icon, class:"block text-gray-700 text-lg font-bold mb-2" %>
+  <%= form.text_field :icon, class:"border form-input"%>
+</div>
+  <%= form.submit "Create Category", class:"bg-blue-200 shadow-md w-full focus:outline-none my-4 bg-white hover:bg-blue-500 text-blue-900 font-semibold hover:text-white py-2 px-4 block border rounded" %>
 <% end %>
+  <a href="<%=  user_categories_path(current_user) %>" class="shadow-md w-full focus:outline-none my-2 bg-white hover:bg-red-500 text-red-900 font-semibold hover:text-white py-2 px-4 block border rounded">
+    <button class="w-full focus:outline-none">Back</button>
+  </a>
+</div>

@@ -1,10 +1,15 @@
-<div class="expense-item">
-      <div class="expense-details border my-4">
-        <h4><%= expense.name %></h4>
-        <p>Amount: <%= expense.amount %> $</p>
-        <p>Date: <%= expense.created_at.strftime('%B %d, %Y') %></p>
+<div class="category-details my-4 flex flex-col bg-white overflow-x-auto py-2 category-card items-end">
+  <div class="flex justify-between w-screen px-2">
+    <div class="ml-4 flex card flex-col justify-between">
+      <div class="flex justify-between items-center">
+        <h4 class="text-gray-500 text-2xl"><%= expense.name %></h4>
+        <div class="text-gray-800">Amount: <%= expense.amount %> $</div>
       </div>
-     <% if category.author_id == current_user.id %>
-  <%= button_to 'Delete', category_expense_path(category, expense), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" %>
+      <hr class="h-px my-10 bg-gray-200 border-0 dark:bg-gray-700">
+      <h4 class="text-gray-500 text-sm"><%= expense.created_at.strftime('%B %d, %Y')  %></h4>
+    </div>
+  </div>
+<% if category.author_id == current_user.id %>
+  <%= button_to 'Delete', category_expense_path(category, expense), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4", params: { category_id: category.id } %>
 <% end %>
 </div>

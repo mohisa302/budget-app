@@ -39,3 +39,17 @@ body {
 .margin {
   margin-right: 20rem;
 }
+
+.form-input {
+  margin-left: 1rem;
+  height: 2rem;
+}
+
+.card {
+  width: 100%;
+}
+
+.checkbox-list input[type='checkbox'] {
+  display: block;
+  margin-bottom: 10px;
+}

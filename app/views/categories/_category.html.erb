@@ -1,23 +1,32 @@
 <%= link_to category_expenses_path(category), class: "category-card" do %>
-  <div class="category-details my-4 flex flex-col bg-white py-2 px-2 category-card items-center justify-center">
+  <div class="category-details my-4 flex flex-col bg-white overflow-x-auto py-2 category-card items-end">
     <div class="flex justify-between w-screen px-2">
-      <div>
-        <% if File.exist?(Rails.root.join('app', 'assets', 'images', "#{category.icon}.png").to_s) %>
-          <%= image_tag "#{category.icon}.png", height: '50px', width: '50px' %>
-        <% else %>
-          <%= image_tag category.icon, height: '50px', width: '50px' %>
-        <% end %>
+      <div class="flex card">
+        <!-- image -->
+        <div>
+          <% if File.exist?(Rails.root.join('app', 'assets', 'images', "#{category.icon}.png").to_s) %>
+            <%= image_tag "#{category.icon}.png", height: '60px', width: '60px' %>
+          <% else %>
+            <%= image_tag category.icon, height: '60px', width: '60px' %>
+          <% end %>
+        </div>
+
+        <!-- information -->
+        <div class="ml-4 flex card flex-col justify-between">
+          <div class="flex justify-between">
+            <h4 class="text-gray-500 text-2xl"><%= category.name %></h4>
+            <div class="text-gray-800"><%=  controller.total_amount_for_category(category) %> $</div>
+          </div>
+
+          <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+          <h4 class="text-gray-500 text-sm"><%= category.created_at.strftime('%B %d, %Y')  %></h4>
+        </div>
       </div>
-      <div class="flex flex-col justify-between margin">
-        <h4 class="text-gray-500"><%= category.name %></h4>
-        <h4 class="text-gray-500"><%= category.created_at.strftime('%B %d, %Y')  %></h4>
-      </div>
-      <div class="text-gray-800"><%=  controller.total_amount_for_category(category) %> $</div>
+    </div>
+    <div class="mt-4">
+      <% if category.author_id == current_user.id %>
+      <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4" %>
+      <% end %>
+    </div>
   </div>
-  <div class="my-4 self-center">
-    <% if category.author_id == current_user.id %>
-    <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4" %>
-    <% end %>
-  </div>
-</div>
 <% end %>

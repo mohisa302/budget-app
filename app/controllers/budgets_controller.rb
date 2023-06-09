@@ -1,2 +1,2 @@
-class BudgetController < ActionController::Base
+class BudgetsController < ActionController::Base
 end

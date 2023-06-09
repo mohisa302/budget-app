@@ -22,6 +22,10 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
+    @category.expenses.each do |expense|
+      expense.categories.delete(@category)
+      expense.destroy if expense.categories.empty?
+    end
     @category.destroy
     redirect_to user_categories_path(current_user)
   end

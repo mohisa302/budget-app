@@ -1,0 +1,18 @@
+databases:
+  - name: costino
+    databaseName: costino
+    user: costino_user
+
+services:
+  - type: web
+    name: costino-app
+    runtime: ruby
+    buildCommand: './bin/render-build.sh'
+    startCommand: 'bundle exec puma -C config/puma.rb'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: costino
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

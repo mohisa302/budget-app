@@ -5,9 +5,9 @@
         <!-- image -->
         <div>
           <% if File.exist?(Rails.root.join('app', 'assets', 'images', "#{category.icon}.png").to_s) %>
-            <%= image_tag "#{category.icon}.png", height: '60px', width: '60px' %>
+            <%= image_tag "#{category.icon}.png", height: '80px', width: '70px' %>
           <% else %>
-            <%= image_tag category.icon, height: '60px', width: '60px' %>
+            <%= image_tag category.icon, height: '80px', width: '70px' %>
           <% end %>
         </div>
 

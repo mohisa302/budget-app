@@ -1,13 +1,13 @@
-<div class="flex px-2 py-8 text-white justify-center background items-center h-10 px-4 w-full">
+<div class="flex py-8 text-white justify-center background items-center h-10 px-4 w-full">
     <h1 class="ml-4 text-center background text-2xl">Log in</h1>
 </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="field mx-2">
     <%= f.label :email, class:"form-label" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"border form-input"  %>
   </div>
 
-  <div class="field">
+  <div class="field mx-2">
     <%= f.label :password, class:"form-label" %><br />
     <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class:"border form-input" %>
   </div>

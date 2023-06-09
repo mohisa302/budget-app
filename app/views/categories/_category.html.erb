@@ -26,7 +26,7 @@
 <% end %>
     <div class="mt-4">
       <% if category.author_id == current_user.id %>
-      <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4" %>
+      <%= button_to 'Delete', user_category_path(current_user, category), method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4" %>
       <% end %>
     </div>
   </div>

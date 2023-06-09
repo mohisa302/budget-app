@@ -5,12 +5,12 @@
 <div class="flex flex-col">
 <%= form_with model: [@user, @category], url: user_categories_path(@user) do |form| %>
 <div class="flex my-2 mx-2">
-  <%= form.label :name, class:"block text-gray-700 text-lg font-bold" %>
-  <%= form.text_field :name, class:"form-input border"%>
+  <%= form.label :name, class:"form-label" %>
+  <%= form.text_field :name, placeholder: "Full name", class:"border form-input" %>
 </div>
 <div class="flex my-2 mx-2">
-  <%= form.label :icon, class:"block text-gray-700 text-lg font-bold mb-2" %>
-  <%= form.text_field :icon, class:"border form-input"%>
+  <%= form.label :icon, class:"form-label" %>
+  <%= form.text_field :icon, placeholder: "Icon name | url", class:"border form-input"%>
 </div>
   <%= form.submit "Create Category", class:"bg-blue-200 shadow-md w-full focus:outline-none my-4 bg-white hover:bg-blue-500 text-blue-900 font-semibold hover:text-white py-2 px-4 block border rounded" %>
 <% end %>

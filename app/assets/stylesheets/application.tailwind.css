@@ -36,12 +36,7 @@ body {
   width: 100%;
 }
 
-.margin {
-  margin-right: 20rem;
-}
-
 .form-input {
-  margin-left: 1rem;
   height: 2rem;
 }
 
@@ -49,7 +44,6 @@ body {
   width: 100%;
 }
 
-.checkbox-list input[type='checkbox'] {
-  display: block;
-  margin-bottom: 10px;
+.form-label {
+  display: none;
 }

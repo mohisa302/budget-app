@@ -1,5 +1,4 @@
 require_relative "boot"
-require "letter_opener_web"
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems

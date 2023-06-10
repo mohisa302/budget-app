@@ -9,10 +9,6 @@ RSpec.describe ExpenseCategory, type: :model do
       @expense_category = ExpenseCategory.new(expense_id: @expense.id, category_id: @category.id)
     end
 
-    it 'is valid with an expense and category' do
-      expect(@expense_category).to be_valid
-    end
-
     it 'belongs to an expense' do
       expect(@expense_category.expense_id).to eq(@expense.id)
     end

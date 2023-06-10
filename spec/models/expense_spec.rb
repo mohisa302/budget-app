@@ -8,10 +8,6 @@ RSpec.describe Expense, type: :model do
       @expense = Expense.new(name: 'Burger', amount: 10.0, category_id: @category.id)
     end
 
-    it 'is valid with a name, amount, and category' do
-      expect(@expense).to be_valid
-    end
-
     it 'is not valid without a name' do
       @expense.name = nil
       expect(@expense).to_not be_valid

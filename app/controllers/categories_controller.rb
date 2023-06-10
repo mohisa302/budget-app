@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @categories = Category.where(author_id: current_user.id)
     @total_amount = @categories.joins(:expenses).sum(:amount)

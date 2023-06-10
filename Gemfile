@@ -81,7 +81,7 @@ gem 'factory_bot_rails'
 
 gem 'cancancan'
 
-group :development do
+group :development, :test do
   gem 'letter_opener_web'
 end
 

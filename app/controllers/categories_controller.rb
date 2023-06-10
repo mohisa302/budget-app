@@ -26,7 +26,8 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     other_category = Category.where.not(id: @category.id).first # choose another valid category to assign expenses to
 
-    Expense.where(category_id: @category.id).update_all(category_id: other_category&.id) # assigns the expenses to the other category
+    Expense.where(category_id: @category.id)
+      .update_all(category_id: other_category&.id) # assigns the expenses to the other category
     @category.destroy
     redirect_to categories_path
   end

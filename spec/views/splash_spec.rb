@@ -6,7 +6,7 @@ RSpec.describe 'Splash', type: :feature do
       @user = User.create(email: 'test@example.com', password: 'password', name: 'Test User')
       visit root_path
     end
-    
+
     it 'should have an href attribute in the "sign in" link' do
       expect(page).to have_selector('a[href]')
     end

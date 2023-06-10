@@ -59,7 +59,7 @@ The hosted app can be found [here](https://costino-app.onrender.com/)
 
 ### Loom Video <a name="Loom Video"></a>
 
-The loom video can be found [here](https://www.loom.com/share/93f3daa74936453c8893ff193c45a744)
+The loom video can be found [here](https://www.loom.com/share/9e1d1d7f187648d7a6e9aa57f066f212)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- Features -->

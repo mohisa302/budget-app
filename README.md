@@ -3,7 +3,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Transaction Buddy ](#-transaction-buddy-)
+- [📖 Costino ](#-transaction-buddy-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Live Link ](#live-link-)

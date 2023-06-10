@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
 
   def index
     @category = Category.find(params[:category_id])
-    @expenses = @category.expenses
+    @expenses = @category.expenses.order(created_at: :desc) # sort expenses by most recent
     @total_expense = @expenses.sum(:amount)
   end
 

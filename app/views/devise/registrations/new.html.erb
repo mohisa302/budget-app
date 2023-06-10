@@ -4,26 +4,26 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="field mx-2">
     <%= f.label :name, class:"form-label" %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Full name", class:"border form-input" %>
   </div>
 
-  <div class="field">
+  <div class="field mx-2">
     <%= f.label :email, class:"form-label" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"border form-input" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password, class:"form-label" %>
+  <div class="field mx-2">
+    <%= f.label :password, class:"form-label mx-2" %>
     <% if @minimum_password_length %>
     <em class="mx-2">(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class:"border form-input"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, class:"mx-2" %><br />
+  <div class="field mx-2">
+    <%= f.label :password_confirmation, class:"form-label" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password", class:"border form-input" %>
   </div>
 
